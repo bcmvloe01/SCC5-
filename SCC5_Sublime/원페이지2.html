@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>솔티드슈즈</title>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung&display=swap" rel="stylesheet">
+		
+	<!-- JS -->		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+		<script>
+			
+			function hey(){
+				alert('버튼 클릭');
+				console.log('버튼 클릭됨');
+			}
+
+		</script>
+
+    <!-- 구글폰트 -->
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat|Nanum+Gothic+Coding|Song+Myung&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+    * {
+      font-family: 'Stylish', sans-serif;
+    }
+    	.title {
+			width: 350px;
+			height: 200px;
+			background: #000;
+			color: #fff;
+			background-image: url('http://image.itdonga.com/files/2019/05/17/_DST_digitalbalance1240x760.jpg');
+			background-size: cover;
+			background-position: center;
+			border-radius: 10px;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+    	}
+    	.lab {
+    		max-width: 300px;
+    		padding: 2rem;
+    	}
+    	.box {
+    		max-width: 300px;
+    	}
+    	.form {
+      		max-width: 500px;
+     		padding: 2rem;
+      		margin: 50px auto 50px auto;
+      		border-color: #e9ecef;
+		    border-radius: 0.3rem;
+		    border: 4px dotted #000;
+		    padding: 20px;
+		    display: block;
+    	}
+
+    </style>
+    
+</head>
+<body>
+	<div class="wrap">
+	<div class="title"></div>
+	<h1>상품제목</h1>
+
+		<div>가격: 120,000원/개</div>
+	
+		<p>신발에 내장된 센서로 측정한 실시간 밸런스 데이터를 바탕으로 올바른 자세와 운동능력을 향상시키는 디지털 밸런스 트레이닝 슈즈</p>
+	<h1>주문하기</h1>
+
+	<form>
+	  <div>
+	    <label class="lab">주문자 성함:</label>
+	    <div class="box">
+	      <input type="text">
+	    </div>
+	  </div>
+	  <div>
+	    <label class="lab">수량:</label>
+	    <div class="box">
+		    <select>
+		      <option>1</option>
+		      <option>2</option>
+		      <option>3</option>
+		      <option>4</option>
+		      <option>5</option>
+		    </select>
+	    </div>
+	  </div>
+	  <div>
+	    <label class="lab">주소:</label>
+	    <div class="box">
+	      <input type="text">
+	    </div>
+	  </div> <div>
+	    <label class="lab">전화번호:</label>
+	    <div class="box">
+	      <input type="text">
+	    </div>
+	  </div>
+	  <div>
+	  	<button onclick="hey()">주문하기</button>
+	  </div>
+	</form>
+
+	</div>
+
+</body>
+</html>
