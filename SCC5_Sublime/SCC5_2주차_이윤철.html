@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>솔티드슈즈</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+    <!-- JS -->        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- 구글폰트 -->
+	<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <script type="text/javascript">
+
+        function hey(){
+
+          $.ajax({
+	        type: "GET",
+		      url: "http://spartacodingclub.shop/order",
+		      data:{},
+		      success: function(response){
+            let orders = response['orders'];
+            console.log(orders);
+            if(response['result'] == 'success'){
+              alert('주문 완료!');            
+            for (let i = 0; i < orders.length; i++) {
+                  let name = $('#_name').val();
+                  let count = $('#_count').val();
+                  let add = $('#_add').val();
+                  let num = $('#_num').val();
+                 make_card(orders[i]['name'],orders[i]['count'],orders[i]['address'],orders[i]['phone'])
+                  }
+                }       
+            }
+          })
+        }
+                function make_card(name,count,add,num) {
+                  let temp_html = '<tr>\
+                      <td>'+name+'</td>\
+                      <td>'+count+'</td>\
+                      <td>'+add+'</td>\
+                      <td>'+num+'</td>\
+                    </tr>';
+                  $('#orders-box').append(temp_html);
+              }          
+
+    </script>
+
+    <style type="text/css">
+    * {
+      font-family: 'Do Hyeon', sans-serif;
+    }
+    	.wrap {
+    		width: 500px;
+    		margin: auto;
+    	}
+        .img {
+            width: 500px;
+            height: 300px;
+            background-image: url('http://image.itdonga.com/files/2019/05/17/_DST_digitalbalance1240x760.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .title {
+        	margin-top: 20px;
+        	margin-bottom: 20px;
+        }
+
+        h1, h5 {
+        	display: inline;
+        }
+        .order {
+        	text-align: center;
+        	margin-top: 20px;
+        }
+        .table {
+        	margin-top: 100px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="wrap">
+    <div class="img"></div>
+    <div class="title"></div>
+        <h1>상품제목</h1>
+        <h5>가격: 120,000원/개</h5>
+        <p>신발에 내장된 센서로 측정한 실시간 밸런스 데이터를 바탕으로 올바른 자세와 운동능력을 향상시키는 디지털 밸런스 트레이닝 슈즈</p>
+
+    <h2>주문하기</h2>
+
+    <div class="form">
+    	<div class="order_name">
+    		<div>
+        	<span class="input_label">주문자 성함:</span>
+        	</div>		
+          	<input type="text" class="text_name" id="_name">
+        </div>
+
+      	<div class="order_count">
+      		<div>
+        	<span class="input_label">수량:</span>
+        	</div>
+        	<div class="box">
+            	<select class="box_count" id="_count">
+	              <option value="1">1</option>
+	              <option value="2">2</option>
+	              <option value="3">3</option>
+	              <option value="4">4</option>
+	              <option value="5">5</option>
+	            </select>
+        	</div>
+      	</div>
+      	<div class="order_add">
+      		<div>
+        	<span class="input_label">주소:</span>
+        	</div>
+          	<input type="text" class="text_add" id="_add">
+        </div>
+     	<div class="order_num">
+      		<div>
+	        <span class="input_label">전화번호:</span>
+        	</div>
+          	<input type="text" class="text_num" id="_num">
+      	</div>
+    	<div class="order">
+        	<button onclick="hey()" type="button">주문하기</button>
+    	</div>
+    </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">이름</th>
+            <th scope="col">수량</th>
+            <th scope="col">주소</th>
+            <th scope="col">전화번호</th>
+          </tr>
+        </thead>
+        <tbody id="orders-box">
+          <tr>
+            <td>이름</td>
+            <td>수량</td>
+            <td>주소</td>
+            <td>전화번호</td>
+          </tr>          
+        </tbody>
+    </table>
+
+</body>
+</html>
